@@ -1,0 +1,10 @@
+{
+  "manifest_version": 1,
+  "name": "Outline",
+  "slug": "nexus-outline",
+  "version": "1.0.0",
+  "author": "ResofireV2",
+  "description": "Clean light theme. Everything defined by borders — no background fills anywhere. Accent color does all the work.",
+  "homepage": "https://github.com/ResofireV2/nexus-theme-outline",
+  "categories": ["light", "minimal", "clean"]
+}

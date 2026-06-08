@@ -1,0 +1,823 @@
+/* ============================================================
+   Nexus — Outline Theme  v1.0.0
+   Author: ResofireV2
+   ============================================================
+   Philosophy:
+   - Light mode only (dark mode unstyled = falls back to Nexus default)
+   - Zero background fills on any structural surface
+   - All depth and hierarchy communicated through borders alone
+   - Active states use a left-border stripe + accent text, no fill
+   - Accent color is the sole chromatic element
+   - @import: DM Sans — clean geometric sans, not Inter
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+/* ── Apply only in light mode ─────────────────────────────── */
+[data-theme="light"] {
+
+/* ── Font ──────────────────────────────────────────────────── */
+  --outline-font: 'DM Sans', system-ui, sans-serif;
+
+}
+
+[data-theme="light"] html,
+[data-theme="light"] body {
+  font-family: 'DM Sans', system-ui, sans-serif !important;
+}
+
+[data-theme="light"] button,
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  font-family: 'DM Sans', system-ui, sans-serif !important;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+[data-theme="light"] ::-webkit-scrollbar {
+  width: 4px;
+}
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: var(--b2);
+  border-radius: 4px;
+}
+
+/* ── Sidebar ───────────────────────────────────────────────── */
+[data-theme="light"] .sidebar {
+  background: transparent !important;
+  border-right: 1px solid var(--b2) !important;
+}
+
+[data-theme="light"] .sb-logo {
+  border-bottom: 1px solid var(--b2) !important;
+  background: transparent !important;
+}
+
+[data-theme="light"] .logo-text {
+  font-weight: 600 !important;
+  letter-spacing: -.4px !important;
+}
+
+[data-theme="light"] .sb-label {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+}
+
+[data-theme="light"] .sb-item {
+  transition: none !important;
+}
+[data-theme="light"] .sb-item:hover {
+  background: transparent !important;
+}
+[data-theme="light"] .sb-item:hover .sb-item-name {
+  color: var(--t1) !important;
+}
+[data-theme="light"] .sb-item:hover i {
+  color: var(--t2) !important;
+}
+
+/* Active: left stripe only, no fill */
+[data-theme="light"] .sb-item.active {
+  background: transparent !important;
+}
+[data-theme="light"] .sb-item.active::before {
+  width: 3px !important;
+  border-radius: 0 !important;
+  top: 6px !important;
+  bottom: 6px !important;
+}
+
+[data-theme="light"] .sb-item-name {
+  font-weight: 400 !important;
+  color: var(--t3) !important;
+}
+[data-theme="light"] .sb-item.active .sb-item-name {
+  font-weight: 500 !important;
+  color: var(--t1) !important;
+}
+
+[data-theme="light"] .sb-item-inner:hover {
+  background: transparent !important;
+}
+[data-theme="light"] .sb-sub-item:hover {
+  background: transparent !important;
+}
+[data-theme="light"] .sb-sub-item.active {
+  background: transparent !important;
+}
+[data-theme="light"] .sb-sub-item.active::before {
+  border-radius: 0 !important;
+}
+
+[data-theme="light"] .sb-divider {
+  background: var(--b1) !important;
+}
+
+[data-theme="light"] .sb-badge {
+  background: transparent !important;
+  border: 1px solid var(--red) !important;
+  color: var(--red) !important;
+}
+
+[data-theme="light"] .sb-user {
+  border-top: 1px solid var(--b2) !important;
+  background: transparent !important;
+}
+
+/* ── Topbar ────────────────────────────────────────────────── */
+[data-theme="light"] .topbar {
+  background: transparent !important;
+  border-bottom: 1px solid var(--b2) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="light"] .tb-search {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  transition: border-color .15s !important;
+}
+[data-theme="light"] .tb-search:focus-within {
+  border-color: var(--ac) !important;
+}
+
+[data-theme="light"] .tb-search-drop {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px rgba(26,20,80,0.08) !important;
+}
+[data-theme="light"] .tb-search-item:hover {
+  background: var(--s2) !important;
+}
+[data-theme="light"] .tb-search-all:hover {
+  background: var(--s2) !important;
+}
+[data-theme="light"] .tb-search-all {
+  border-top: 1px solid var(--b1) !important;
+}
+
+[data-theme="light"] .icon-btn {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  color: var(--t3) !important;
+  transition: none !important;
+}
+[data-theme="light"] .icon-btn:hover {
+  background: transparent !important;
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+}
+
+[data-theme="light"] .write-btn {
+  background: transparent !important;
+  border: 1.5px solid var(--ac) !important;
+  color: var(--ac) !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: none !important;
+}
+[data-theme="light"] .write-btn:hover {
+  background: var(--ac) !important;
+  color: var(--ac-on) !important;
+  opacity: 1 !important;
+}
+
+/* Avatar dropdown */
+[data-theme="light"] .av-dd {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px rgba(26,20,80,0.08) !important;
+}
+[data-theme="light"] .av-dd-hdr {
+  border-bottom: 1px solid var(--b1) !important;
+}
+[data-theme="light"] .av-dd-item:hover {
+  background: var(--s2) !important;
+  color: var(--t1) !important;
+  border-radius: 6px !important;
+}
+[data-theme="light"] .av-dd-divider {
+  background: var(--b1) !important;
+}
+
+/* ── Feed ──────────────────────────────────────────────────── */
+[data-theme="light"] .feed-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--b2) !important;
+}
+
+[data-theme="light"] .sort-pill {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  color: var(--t3) !important;
+  transition: none !important;
+}
+[data-theme="light"] .sort-pill:hover:not(.active) {
+  background: transparent !important;
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+}
+[data-theme="light"] .sort-pill.active {
+  background: transparent !important;
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+  font-weight: 600 !important;
+}
+
+/* ── Thread rows ───────────────────────────────────────────── */
+[data-theme="light"] .thread {
+  border-bottom: 1px solid var(--b1) !important;
+  transition: none !important;
+}
+[data-theme="light"] .thread:hover {
+  background: transparent !important;
+}
+[data-theme="light"] .thread:hover .thread-title {
+  color: var(--ac) !important;
+}
+
+/* Keep thread-accent as the space color indicator */
+[data-theme="light"] .thread-accent {
+  width: 2px !important;
+}
+
+[data-theme="light"] .thread-title {
+  color: var(--t1) !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .thread-tag {
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .meta-n {
+  font-weight: 500 !important;
+}
+[data-theme="light"] .meta-div {
+  background: var(--b2) !important;
+}
+
+/* ── Right panel ───────────────────────────────────────────── */
+[data-theme="light"] .right-panel {
+  background: transparent !important;
+  border-left: 1px solid var(--b2) !important;
+}
+
+[data-theme="light"] .rw {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+}
+
+[data-theme="light"] .rw-label {
+  font-weight: 600 !important;
+  letter-spacing: .6px !important;
+  font-size: 10px !important;
+  border-bottom: 1px solid var(--b1) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+[data-theme="light"] .stat-card {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+}
+[data-theme="light"] .stat-n {
+  color: var(--t1) !important;
+  font-weight: 600 !important;
+}
+[data-theme="light"] .stat-l {
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .p-bar-wrap {
+  background: var(--b1) !important;
+  border-radius: 0 !important;
+  height: 2px !important;
+}
+[data-theme="light"] .p-bar {
+  border-radius: 0 !important;
+  height: 2px !important;
+}
+
+/* ── Post page ─────────────────────────────────────────────── */
+[data-theme="light"] .post-content-wrap {
+  background: transparent !important;
+}
+
+[data-theme="light"] .post-back {
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  display: inline-flex !important;
+  transition: none !important;
+}
+[data-theme="light"] .post-back:hover {
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+  background: transparent !important;
+}
+
+[data-theme="light"] .post-title {
+  font-weight: 600 !important;
+  color: var(--t1) !important;
+}
+
+[data-theme="light"] .post-body {
+  border-bottom: 1px solid var(--b1) !important;
+}
+
+[data-theme="light"] .replies-header {
+  border-bottom: 1px solid var(--b2) !important;
+}
+[data-theme="light"] .replies-count {
+  font-weight: 500 !important;
+  color: var(--t2) !important;
+}
+
+[data-theme="light"] .reply-item {
+  border-bottom: 1px solid var(--b1) !important;
+}
+
+/* Reactions */
+[data-theme="light"] .rx-trigger {
+  border: 1px solid var(--b2) !important;
+  background: transparent !important;
+  border-radius: 6px !important;
+  transition: none !important;
+}
+[data-theme="light"] .rx-trigger:hover {
+  background: transparent !important;
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+}
+[data-theme="light"] .rx-trigger.reacted {
+  background: transparent !important;
+  border: 1.5px solid var(--ac) !important;
+  color: var(--ac) !important;
+}
+
+[data-theme="light"] .rx-pill {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+  transition: none !important;
+}
+[data-theme="light"] .rx-pill:hover {
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .rx-pill.mine {
+  background: transparent !important;
+  border: 1.5px solid var(--ac) !important;
+}
+
+/* Reply box */
+[data-theme="light"] .reply-box {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+}
+[data-theme="light"] .reply-box:focus-within {
+  border-color: var(--ac) !important;
+}
+[data-theme="light"] .reply-box-foot {
+  border-top: 1px solid var(--b1) !important;
+  background: transparent !important;
+}
+
+/* Markdown */
+[data-theme="light"] .md-body code {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+}
+[data-theme="light"] .md-body pre {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+}
+[data-theme="light"] .md-body blockquote {
+  background: transparent !important;
+  border-left: 3px solid var(--ac) !important;
+}
+
+/* ── Composer ──────────────────────────────────────────────── */
+[data-theme="light"] .comp-title-input {
+  border-bottom: 1px solid var(--b2) !important;
+  font-weight: 600 !important;
+}
+[data-theme="light"] .comp-title-input:focus {
+  border-bottom-color: var(--ac) !important;
+}
+[data-theme="light"] .comp-meta-row {
+  border-bottom: 1px solid var(--b1) !important;
+}
+
+[data-theme="light"] .comp-toolbar {
+  border-bottom: 1px solid var(--b1) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .comp-tb-btn:hover {
+  background: transparent !important;
+  color: var(--ac) !important;
+}
+[data-theme="light"] .comp-tb-btn--active {
+  background: transparent !important;
+  color: var(--ac) !important;
+  border-bottom: 2px solid var(--ac) !important;
+  border-radius: 0 !important;
+}
+
+[data-theme="light"] .comp-body-area {
+  background: transparent !important;
+  border: 1px solid var(--b1) !important;
+  border-top: none !important;
+  border-radius: 0 !important;
+}
+
+[data-theme="light"] .comp-sel {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+  transition: none !important;
+}
+[data-theme="light"] .comp-sel:focus {
+  border-color: var(--ac) !important;
+}
+[data-theme="light"] .comp-type-btn {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+  transition: none !important;
+}
+[data-theme="light"] .comp-type-btn:hover {
+  background: transparent !important;
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+}
+[data-theme="light"] .comp-tag-add {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+  transition: none !important;
+}
+[data-theme="light"] .comp-tag-add:hover {
+  background: transparent !important;
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+}
+[data-theme="light"] .comp-tag-pill {
+  background: transparent !important;
+  border: 1.5px solid var(--ac) !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="light"] .comp-dd {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(26,20,80,0.08) !important;
+}
+[data-theme="light"] .comp-dd-item:hover {
+  background: var(--s2) !important;
+  border-radius: 6px !important;
+}
+[data-theme="light"] .comp-dd-item.active {
+  background: transparent !important;
+  color: var(--ac) !important;
+}
+
+[data-theme="light"] .comp-footer {
+  border-top: 1px solid var(--b1) !important;
+  background: transparent !important;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+[data-theme="light"] .btn-primary {
+  background: transparent !important;
+  border: 1.5px solid var(--ac) !important;
+  color: var(--ac) !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: none !important;
+}
+[data-theme="light"] .btn-primary:hover {
+  background: var(--ac) !important;
+  color: var(--ac-on) !important;
+  opacity: 1 !important;
+}
+[data-theme="light"] .btn-primary:disabled {
+  background: transparent !important;
+  opacity: .35 !important;
+}
+
+[data-theme="light"] .btn-ghost {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  transition: none !important;
+}
+[data-theme="light"] .btn-ghost:hover {
+  background: transparent !important;
+  border-color: var(--ac) !important;
+  color: var(--ac) !important;
+}
+
+/* ── Auth card ─────────────────────────────────────────────── */
+[data-theme="light"] .auth-card {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+[data-theme="light"] .fi {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  transition: border-color .15s !important;
+}
+[data-theme="light"] .fi:focus {
+  border-color: var(--ac) !important;
+  background: transparent !important;
+}
+
+/* ── Profile ───────────────────────────────────────────────── */
+[data-theme="light"] .profile-info-wrap {
+  border-bottom: 1px solid var(--b1) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .profile-stat-card {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  transition: none !important;
+}
+[data-theme="light"] .profile-stat-card:hover {
+  border-color: var(--ac) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .psc-n {
+  font-weight: 600 !important;
+}
+[data-theme="light"] .profile-tabs {
+  border-bottom: 1px solid var(--b2) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .p-tab {
+  font-weight: 400 !important;
+  color: var(--t3) !important;
+}
+[data-theme="light"] .p-tab.active {
+  color: var(--t1) !important;
+  font-weight: 500 !important;
+  border-bottom: 2px solid var(--ac) !important;
+}
+[data-theme="light"] .p-reply-card {
+  border-bottom: 1px solid var(--b1) !important;
+}
+
+/* ── Notifications ─────────────────────────────────────────── */
+[data-theme="light"] .notif-item {
+  border-bottom: 1px solid var(--b1) !important;
+  transition: none !important;
+}
+[data-theme="light"] .notif-item:hover {
+  background: transparent !important;
+}
+[data-theme="light"] .notif-item:hover .reply-author,
+[data-theme="light"] .notif-item:hover .reply-text {
+  color: var(--t1) !important;
+}
+[data-theme="light"] .notif-item.unread {
+  background: transparent !important;
+  border-left: 3px solid var(--ac) !important;
+}
+
+/* ── Admin ─────────────────────────────────────────────────── */
+[data-theme="light"] .admin-sidenav {
+  background: transparent !important;
+  border-right: 1px solid var(--b2) !important;
+}
+[data-theme="light"] .admin-content-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--b2) !important;
+}
+[data-theme="light"] .admin-sn-item:hover {
+  background: transparent !important;
+}
+[data-theme="light"] .admin-sn-item:hover .admin-sn-item-name {
+  color: var(--t1) !important;
+}
+[data-theme="light"] .admin-sn-item.active {
+  background: transparent !important;
+}
+[data-theme="light"] .admin-sn-item.active::before {
+  border-radius: 0 !important;
+  width: 3px !important;
+}
+[data-theme="light"] .admin-stat-card {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  transition: none !important;
+}
+[data-theme="light"] .admin-stat-card:hover {
+  border-color: var(--ac) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .panel {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+}
+[data-theme="light"] .atbl th {
+  border-bottom: 1px solid var(--b2) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .atbl td {
+  border-bottom: 1px solid var(--b1) !important;
+}
+[data-theme="light"] .atbl tr:hover td {
+  background: transparent !important;
+}
+[data-theme="light"] .toggle-row {
+  border-bottom: 1px solid var(--b1) !important;
+}
+[data-theme="light"] .admin-sn-badge {
+  background: transparent !important;
+  border: 1px solid var(--red) !important;
+}
+
+/* ── DM ────────────────────────────────────────────────────── */
+[data-theme="light"] .dm-search-inner {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  transition: border-color .15s !important;
+}
+[data-theme="light"] .dm-search-inner:focus-within {
+  border-color: var(--ac) !important;
+}
+[data-theme="light"] .thread-row {
+  border-bottom: 1px solid var(--b1) !important;
+  transition: none !important;
+}
+[data-theme="light"] .thread-row:hover,
+[data-theme="light"] .thread-row.active {
+  background: transparent !important;
+  border-left: 3px solid var(--ac) !important;
+}
+[data-theme="light"] .theirs .bubble {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+}
+
+/* ── User card popover ─────────────────────────────────────── */
+[data-theme="light"] .ucard {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px rgba(26,20,80,0.08) !important;
+}
+[data-theme="light"] .ucard-stat {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+}
+[data-theme="light"] .ucard-stat-n {
+  font-weight: 600 !important;
+}
+
+/* ── Slash / mention menus ─────────────────────────────────── */
+[data-theme="light"] .slash-menu {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(26,20,80,0.08) !important;
+}
+[data-theme="light"] .slash-item {
+  border-bottom: 1px solid var(--b1) !important;
+  transition: none !important;
+}
+[data-theme="light"] .slash-item:hover,
+[data-theme="light"] .slash-item.sel {
+  background: var(--s2) !important;
+  color: var(--t1) !important;
+}
+[data-theme="light"] .slash-icon {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="light"] .mention-drop {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(26,20,80,0.08) !important;
+}
+[data-theme="light"] .mention-item:hover,
+[data-theme="light"] .mention-item.sel {
+  background: var(--s2) !important;
+}
+
+/* ── Toasts ────────────────────────────────────────────────── */
+[data-theme="light"] .toast {
+  background: var(--s1) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 2px 12px rgba(26,20,80,0.10) !important;
+  border-radius: 8px !important;
+}
+[data-theme="light"] .toast.ok {
+  border: 1.5px solid var(--green) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .toast.err {
+  border: 1.5px solid var(--red) !important;
+  background: transparent !important;
+}
+
+/* ── Quote tooltip ─────────────────────────────────────────── */
+[data-theme="light"] .quote-tooltip {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 12px rgba(26,20,80,0.08) !important;
+  transition: none !important;
+}
+[data-theme="light"] .quote-tooltip:hover {
+  background: var(--s2) !important;
+  color: var(--t1) !important;
+}
+
+/* ── Ref popup ─────────────────────────────────────────────── */
+[data-theme="light"] .ref-popup {
+  background: var(--s1) !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(26,20,80,0.08) !important;
+}
+[data-theme="light"] .ref-popup-body::after {
+  background: linear-gradient(transparent, var(--s1)) !important;
+}
+
+/* ── Spoiler ───────────────────────────────────────────────── */
+[data-theme="light"] .spoiler {
+  background: var(--b2) !important;
+  border-radius: 3px !important;
+}
+[data-theme="light"] .spoiler.revealed {
+  background: transparent !important;
+  outline: 1px solid var(--b2) !important;
+}
+[data-theme="light"] .spoiler:hover {
+  background: var(--b3) !important;
+}
+
+/* ── Select elements ───────────────────────────────────────── */
+[data-theme="light"] select {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  border-radius: 6px !important;
+}
+[data-theme="light"] select:focus {
+  border-color: var(--ac) !important;
+  outline: none !important;
+}
+
+/* ── Row hover menus ───────────────────────────────────────── */
+[data-theme="light"] .row-menu-btn:hover {
+  background: transparent !important;
+  border: 1px solid var(--b2) !important;
+  color: var(--t2) !important;
+}
+
+/* ── Members grid cards ────────────────────────────────────── */
+[data-theme="light"] .ucard-stat {
+  background: transparent !important;
+}
+
+/* ── sp-tag (space/tag pills on threads) ───────────────────── */
+[data-theme="light"] .sp-tag {
+  background: transparent !important;
+  border: 1px solid currentColor !important;
+}
+
+/* ── Admin topbar badge ────────────────────────────────────── */
+[data-theme="light"] .admin-badge {
+  background: transparent !important;
+  border: 1px solid rgba(251,191,36,.5) !important;
+}
+
