@@ -4,7 +4,7 @@
   "slug": "nexus-outline",
   "version": "1.1.0",
   "author": "ResofireV2",
-  "description": "Clean light theme. Everything defined by borders \u2014 no background fills anywhere. Accent color does all the work.",
+  "description": "Clean light theme. Everything defined by borders — no background fills anywhere. Accent color does all the work.",
   "homepage": "https://github.com/ResofireV2/nexus-theme-outline",
   "categories": [
     "light",
@@ -28,5 +28,7 @@
         "--b3": "rgba(26,20,80,0.14)"
       }
     }
-  }
+  },
+  "logo_url": "https://raw.githubusercontent.com/ResofireV2/nexus-theme-outline/main/priv/static/logo.webp",
+  "banner_url": "https://raw.githubusercontent.com/ResofireV2/nexus-theme-outline/main/priv/static/banner.webp"
 }
